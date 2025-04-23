@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission & Vision - Sunrise Public School</title>
+    
+    <!-- External Stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Internal Styles -->
+    <style>
+        /* Common Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding: 0.2rem 0;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 0.8rem;
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .back-to-home {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 0.5rem 1rem;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home:hover {
+            background: white;
+            color: #2c3e50;
+        }
+
+        /* Secondary Navigation */
+        .secondary-nav {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 60px;
+        }
+
+        .secondary-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .secondary-nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .secondary-nav ul li a:hover,
+        .secondary-nav ul li a.active {
+            color: #ff004f;
+        }
+
+        .secondary-nav ul li a::after {
+            content: '';
+            width: 0;
+            height: 2px;
+            background: #ff004f;
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            transition: 0.3s;
+        }
+
+        .secondary-nav ul li a:hover::after,
+        .secondary-nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* Main Content Styles */
+        main {
+            margin-top: 120px;
+            width: 100%;
+        }
+
+        .mission-section {
+            width: 100%;
+        }
+
+        .mission-container {
+            width: 100%;
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+        }
+
+        .mission-statement {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: #f8f9fa;
+            width: 100%;
+        }
+
+        .mission-statement h2 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-statement p {
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vision-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 1400px;
+            padding: 0 2rem;
+        }
+
+        .vision-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vision-card i {
+            font-size: 3rem;
+            color: #ff004f;
+            margin-bottom: 1.5rem;
+        }
+
+        .vision-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .vision-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .core-values {
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background: white;
+            width: 100%;
+        }
+
+        .core-values h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .value-item i {
+            color: #ff004f;
+            font-size: 1.5rem;
+        }
+
+        .value-item h4 {
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        /* Additional Interactive Styles */
+        .timeline {
+            position: relative;
+            width: 100%;
+            padding: 4rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .timeline h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: #ff004f;
+            top: 150px; /* Adjusted to start after the title */
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff004f;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -50px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .achievement-card i {
+            font-size: 3rem;
+            color: #ff004f;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .achievement-card p {
+            color: #666;
+        }
+
+        .testimonials {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            width: 100%;
+        }
+
+        .testimonial-slider {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 1rem;
+            text-align: center;
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card h4 {
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .testimonial-card span {
+            color: #ff004f;
+            font-size: 0.9rem;
+        }
+
+        .cta-section {
+            width: 100%;
+            padding: 4rem 2rem;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        .cta-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff004f;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #e60045;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin-top: 100px;
+            }
+
+            .mission-statement {
+                padding: 2rem 1rem;
+            }
+
+            .vision-container,
+            .values-grid,
+            .achievements-grid {
+                padding: 0 1rem;
+            }
+
+            .timeline {
+                padding: 2rem 1rem;
+            }
+
+            .secondary-nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .secondary-nav {
+                padding: 0.5rem 0;
+            }
+
+            .logo h1 {
+                font-size: 1rem;
+            }
+
+            .back-to-home {
+                font-size: 12px;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+                top: 150px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left !important;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-content::after {
+                left: -39px !important;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 4rem 0 1rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-section {
+            padding: 1rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            width: 50px;
+            margin-right: 1rem;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .social-icons {
+            margin-top: 1.5rem;
+        }
+
+        .social-icons a {
+            color: white;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff004f;
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ff004f;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info li i {
+            color: #ff004f;
+            font-size: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .contact-info li {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="Img/logo.jpg" alt="Sunrise Public School Logo">
+            <h1>Sunrise Public School</h1>
+        </div>
+        <a href="index.html" class="back-to-home">Back to Home</a>
+    </header>
+
+    <!-- Secondary Navigation -->
+    <nav class="secondary-nav">
+        <ul>
+            <li><a href="mandatory.html">Mandatory Public Disclosure</a></li>
+            <li><a href="about.html">About Sunrise Public School</a></li>
+            <li><a href="manager.html">Manager Message</a></li>
+            <li><a href="principal.html">Principal Message</a></li>
+            <li><a href="mission.html" class="active">Mission & Vision</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Mission Statement -->
+        <section class="mission-statement" data-aos="fade-up">
+            <h2>Our Mission</h2>
+            <p>To provide a nurturing environment that fosters academic excellence, character development, and holistic growth, preparing students to become responsible global citizens and leaders of tomorrow.</p>
+        </section>
+
+        <!-- Vision Cards -->
+        <section class="vision-container">
+            <div class="vision-card" data-aos="fade-up">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Our Vision</h3>
+                <p>To be recognized as a premier educational institution that sets the benchmark for quality education, innovation, and character development, creating a positive impact on society.</p>
+            </div>
+            <div class="vision-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-star"></i>
+                <h3>Our Goal</h3>
+                <p>To empower every student with knowledge, skills, and values necessary to excel in their chosen fields while maintaining strong ethical principles and social responsibility.</p>
+            </div>
+            <div class="vision-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-handshake"></i>
+                <h3>Our Commitment</h3>
+                <p>To provide a safe, inclusive, and stimulating learning environment that encourages creativity, critical thinking, and lifelong learning.</p>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="core-values">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item" data-aos="fade-up">
+                    <i class="fas fa-book"></i>
+                    <h4>Academic Excellence</h4>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-heart"></i>
+                    <h4>Integrity</h4>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-users"></i>
+                    <h4>Respect</h4>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h4>Compassion</h4>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-brain"></i>
+                    <h4>Innovation</h4>
+                </div>
+                <div class="value-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-globe"></i>
+                    <h4>Global Citizenship</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="timeline" data-aos="fade-up">
+            <h2>Our Journey</h2>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>2005</h3>
+                    <p>Sunrise Public School was established with a vision to provide quality education in Panipat.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>2010</h3>
+                    <p>Expanded infrastructure and introduced modern teaching methodologies.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-right">
+                <div class="timeline-content">
+                    <h3>2015</h3>
+                    <p>Achieved CBSE affiliation and introduced digital learning platforms.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left">
+                <div class="timeline-content">
+                    <h3>2020</h3>
+                    <p>Implemented comprehensive online learning systems and enhanced sports facilities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements-grid" data-aos="fade-up">
+            <div class="achievement-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Academic Excellence</h3>
+                <p>Consistently achieving 100% pass rate in board examinations</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-medal"></i>
+                <h3>Sports Achievements</h3>
+                <p>Multiple state and national level championships in various sports</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Alumni Success</h3>
+                <p>Our alumni are making significant contributions in various fields globally</p>
+            </div>
+            <div class="achievement-card">
+                <i class="fas fa-award"></i>
+                <h3>Recognition</h3>
+                <p>Consistently ranked among top schools in the region</p>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials" data-aos="fade-up">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 3rem;">What People Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-card">
+                    <img src="Img/parent1.jpg" alt="Parent">
+                    <p>"Sunrise Public School has provided my child with an excellent education and a nurturing environment. The teachers are dedicated and the facilities are outstanding."</p>
+                    <h4>Mr. Sharma</h4>
+                    <span>Parent</span>
+                </div>
+                <div class="testimonial-card">
+                    <img src="Img/alumni1.jpg" alt="Alumni">
+                    <p>"The values and education I received at Sunrise Public School have been instrumental in my success. The school truly prepares you for life."</p>
+                    <h4>Priya Singh</h4>
+                    <span>Alumni, Class of 2015</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section" data-aos="fade-up">
+            <div class="cta-content">
+                <h2>Join Our Journey</h2>
+                <p>Be a part of our mission to shape the future through quality education and holistic development.</p>
+                <a href="contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+            <img src="Img/logo.jpg" alt="Sunrise Public School Logo">
+                    <h3>Sunrise Public School</h3>
+        </div>
+                <p>Empowering minds, building futures</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Sondhapur howk, Panipat</li>
+                    <li><i class="fas fa-phone"></i> 6565565676</li>
+                    <li><i class="fas fa-envelope"></i> sondhar@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sunrise Public School. All rights reserved.</p>
+    </div>
+  </footer>
+  
+    <!-- Scripts Section -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html>

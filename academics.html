@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunrise Public School - Academics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* General Reset */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f7f6;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 0.5rem 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.2rem 0;
+        }
+
+        .logo img {
+            width: 40px;
+            margin-right: 0.8rem;
+        }
+
+        .logo h1 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        /* Navigation */
+        nav {
+            background: transparent;
+            padding: 0.3rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        nav ul li a.active {
+            border-bottom: 2px solid #e74c3c;
+        }
+
+        /* Main Content */
+        main {
+            padding: 100px 20px 20px;
+        }
+
+        .academics {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .academic-programs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .program {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 20px;
+            width: 30%;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            margin: 10px;
+        }
+
+        .footer-logo img {
+            width: 50px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Img/logo.jpg" alt="Sunrise Public School Logo">
+            <h1>Sunrise Public School</h1>
+        </div>
+        <div class="list">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" onclick="return false;">About <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-content">
+                        <li><a href="mandatory.html">Mandatory Public Disclosure</a></li>
+                        <li><a href="about.html">About Sunrise Public School</a></li>
+                        <li><a href="manager.html">Manager Message</a></li>
+                        <li><a href="principal.html">Principal Message</a></li>
+                        <li><a href="mission.html">Mission & Vision</a></li>
+                        <li><a href="staff.html">Our Staff</a></li>
+                    </ul>
+                </li>
+                <li><a href="academics.html" class="active">Academics</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav></div>
+    </header>
+
+    <main>
+        <!-- Academics Section -->
+        <section class="academics" data-aos="fade-up">
+            <h2>Our Academic Programs</h2>
+            <p>At Sunrise Public School, we offer a comprehensive curriculum designed to foster academic excellence and holistic development.</p>
+            <div class="academic-programs">
+                <div class="program" data-aos="zoom-in">
+                    <h3>Primary Education</h3>
+                    <p>Our primary education program focuses on foundational skills in literacy, numeracy, and critical thinking.</p>
+                </div>
+                <div class="program" data-aos="zoom-in" data-aos-delay="100">
+                    <h3>Secondary Education</h3>
+                    <p>Our secondary education program prepares students for higher education and career readiness with a strong emphasis on STEM subjects.</p>
+                </div>
+                <div class="program" data-aos="zoom-in" data-aos-delay="200">
+                    <h3>Extracurricular Activities</h3>
+                    <p>We offer a wide range of extracurricular activities to support students' interests and talents, including sports, arts, and clubs.</p>
+                </div>
+                <div class="program" data-aos="zoom-in" data-aos-delay="300">
+                    <h3>Advanced Placement Courses</h3>
+                    <p>Our AP courses provide students with the opportunity to earn college credit and prepare for higher education challenges.</p>
+                </div>
+                <div class="program" data-aos="zoom-in" data-aos-delay="400">
+                    <h3>Special Education</h3>
+                    <p>We offer tailored programs to support students with special needs, ensuring an inclusive and supportive learning environment.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="Img/logo.jpg" alt="Sunrise Public School Logo">
+                    <h3>Sunrise Public School</h3>
+                </div>
+                <p>Empowering the Future</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> Sondhapur howk, Panipat</li>
+                    <li><i class="fas fa-phone"></i> 6565565676</li>
+                    <li><i class="fas fa-envelope"></i> sondhar@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Sunrise Public School. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.createElement('button');
+        mobileNavToggle.className = 'mobile-nav-toggle';
+        mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.querySelector('header').appendChild(mobileNavToggle);
+
+        mobileNavToggle.addEventListener('click', () => {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
